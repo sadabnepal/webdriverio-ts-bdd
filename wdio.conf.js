@@ -32,7 +32,7 @@ exports.config = {
     framework: 'cucumber',
     reporters: [['allure', 
                 {
-                    outputDir: './report/allure-results',
+                    outputDir: 'allure-results',
                     disableWebdriverStepsReporting: true,
                     disableWebdriverScreenshotsReporting: true,
                 }]],

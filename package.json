@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx wdio wdio.conf.js",
-    "report": "allure generate --clean ./report/allure-results -o ./report/allure-report && allure open",
-    "start": "npm install chromedriver --chromedriver_filepath=C:/Users/saqibm/Desktop/FrameWork/OtherProjects/WDIO_TypeScript_BDD_AutoPractise/drivers/chromedriver_win32.zip"
+    "report": "allure generate --clean allure-results && allure open",
+    "start": "npm install chromedriver --chromedriver_filepath=./drivers/chromedriver_win32.zip"
   },
   "author": "MD SADAB SAQIB",
   "license": "ISC",
