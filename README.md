@@ -22,3 +22,6 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 
 ### Reports used
 - `allure-reporter`
+
+### Sample Report
+![image](https://user-images.githubusercontent.com/65847528/95663996-8ff71500-0b61-11eb-8081-82c62099fb3e.png)
