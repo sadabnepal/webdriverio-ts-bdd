@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": false,
+    "paths": {
+      "*": ["./*"],
+      "src/*": ["./src/*"],
+    },
+    "resolveJsonModule": true,
+    "target": "ES2019",
+    "module": "commonJs",
+    "types": [
+        "node", 
+        "@wdio/sync", 
+        "@wdio/cucumber-framework",
+        "webdriverio"
+      ]
+  }
+}
