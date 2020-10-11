@@ -3,33 +3,45 @@ export default class basepage {
         return browser.url("")
     }
 
-    doClick(element) {
+    doClick(element:any) {
         element.waitForDisplayed();
         element.click();
     }
 
-    doSetValue(element, value) {
+    doSetValue(element:any, value:string) {
         element.waitForDisplayed();
-        value.setValue(value);
+        element.clearValue();
+        element.setValue(value);
     }
     
-    doGetText(element) {
+    doGetText(element:any):string {
         element.waitForDisplayed()
         return element.getText();
     }
 
-    getElement(element) {
+    getElement(element:any) {
         element.waitForDisplayed();
         return element;
     }
 
-    doIsDisplayed(element):boolean {
+    doIsDisplayed(element:any):boolean {
         element.waitForDisplayed();
         return element.isDisplayed();
     }
 
-    doIsExists(element): boolean {
-        element.waitForDisplayed();
+    doIsExists(element:any): boolean {
+        try { element.waitForDisplayed(); } 
+        catch (error) { }
         return element.isExisting();
+    }
+
+    doSelectByAttribute(element:any, attribute:string, value:string) {
+        element.waitForEnabled();
+        element.selectByAttribute(attribute, value);
+    }
+
+    doSelectByVisibleText(element:any, text:string) {
+        element.waitForEnabled();
+        element.selectByVisibleText(text);
     }
 }

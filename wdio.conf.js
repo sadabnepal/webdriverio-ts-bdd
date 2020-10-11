@@ -22,7 +22,7 @@ exports.config = {
     // Test Configurations
     // ===================
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'error',
+    logLevel: 'warn',
     bail: 0,
     baseUrl: 'http://automationpractice.com',
     waitforTimeout: 10000,
@@ -38,7 +38,7 @@ exports.config = {
                 }]],
     cucumberOpts: {
         require: ['./src/stepdef/*.spec.ts'],
-        backtrace: false,
+        backtrace: true,
         requireModule: [
             "tsconfig-paths/register",
             () => { require('ts-node').register({ files: true }) },

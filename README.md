@@ -6,19 +6,24 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 1. git clone https://github.com/sadabnepal/WDIO6_TypeScript_BDD.git
 2. Navigate to `WDIO6_TypeScript_BDD`
 3. In the terminal, Perform "npm i" to install all the dependencies present in the package.json file.
-4. In the terminal, perform `npm run test` to start the script execution
-5. In the terminal, perform `npm run report` to start the script execution
+```
+
+## Runing a Test and Generate Report
+```
+1. In the terminal, perform `npm run test` to start the script execution
+2. In the terminal, perform `npm run report` to start the script execution
 ```
 ### Folder structure
 - `src` - This folder contains sub folders `page` and `features`
+- `constants` - This folder contains all contanst of different pages
 - `page` - This sub-folder contains all page objects and related action methods 
 - `features` - This sub-folder contains all feature files
 - `stepdef` - This folder contains all `.spec.ts` files.
-- `report` - This folder contains all generated report files.
+- `testdata` - This folder contains all `test data` to drive the test.
+- `utis` - This folder contains basis utilities to reuase in different classes.
 - `wdio.config.js` - This file contains all the configuration set up of the framework
 - `package.json` - This file holds all dependencies required for developement/execution
 - `tsconfig.json` - This files contains TypeScript specific configuration
-- `.gitignore` - This file contains folder/file that needs to be ignored for git integration
 
 ### Reports used
 - `allure-reporter`
