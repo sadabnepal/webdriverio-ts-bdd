@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx wdio wdio.conf.js",
     "report": "allure generate --clean allure-results && allure open",
-    "start": "npm install chromedriver --chromedriver_filepath=./drivers/chromedriver_win32.zip"
+    "installChrome": "npm install chromedriver --chromedriver_filepath=./drivers/chromedriver_win32.zip"
   },
   "author": "MD SADAB SAQIB",
   "license": "ISC",
