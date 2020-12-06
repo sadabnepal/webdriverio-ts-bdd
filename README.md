@@ -13,6 +13,13 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 1. In the terminal, perform `npm run test` to start the script execution
 2. In the terminal, perform `npm run report` to start the script execution
 ```
+
+## Runing a Test in firefox
+1. Uncomment **firefox configuration** from **capabilities section** present in `wdio.conf.js` file
+2. Run below command in bash terminal and leave it open (make sure you enter below path same as where firefox installed in your system)
+	`./geckodriver.exe --binary 'C:\Program Files\Mozilla Firefox\firefox.exe' --port 8080`
+3. Open new terminal and rub `npm run test`. Execution will start in both chrome and firefox
+
 ### Folder structure
 - `src` - This folder contains sub folders `page` and `features`
 - `constants` - This folder contains all contanst of different pages

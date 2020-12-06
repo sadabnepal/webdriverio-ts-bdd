@@ -1,4 +1,11 @@
 exports.config = {
+	// =====================
+    // Server Configurations
+    // =====================
+	runner: 'local',
+    hostname: 'localhost',
+    port: 8080,
+    path: '/',
     // ====================
     // Runner Configuration
     // ====================
@@ -13,11 +20,22 @@ exports.config = {
     // Capabilities
     // ============
     maxInstances: 2,
-    capabilities: [{
-        maxInstances: 5,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-    }],
+    capabilities: [
+		{
+			// maxInstances: 5,
+			browserName: 'chrome',
+			acceptInsecureCerts: true
+			// args: ['--headless', '--disable-gpu'],
+		},
+	 /*	{
+			// maxInstances: 5,
+			browserName: 'firefox',
+			'moz:firefoxOptions': {
+			// args: ['-headless']
+			}
+		}, 
+	*/
+	],
     // ===================
     // Test Configurations
     // ===================
