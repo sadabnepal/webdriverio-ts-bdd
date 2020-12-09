@@ -48,12 +48,21 @@ exports.config = {
     connectionRetryCount: 3,
     services: ['chromedriver'],
     framework: 'cucumber',
-    reporters: [['allure', 
+    reporters: [
+			['allure', 
                 {
-                    outputDir: './reports/allure-results',
+                    outputDir: 'allure-results',
                     disableWebdriverStepsReporting: true,
                     disableWebdriverScreenshotsReporting: true,
-                }]],
+                }
+			],
+			['junit', 
+				{
+					outputDir: './'
+				}
+			]
+				
+	],
     cucumberOpts: {
         require: ['./src/stepdef/*.spec.ts'],
         backtrace: true,

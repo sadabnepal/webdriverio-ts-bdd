@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test_Automation_Practise_application" timestamp="2020-12-09T20:32:23" time="31.899" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Test Automation Practise application"/>
+      <property name="capabilities" value="chrome.87_0_4280_88.windows"/>
+      <property name="featureFile" value=".\src\features\01_CreateAccount.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.87_0_4280_88.windows.Test_Automation_Practise_application" name="Test_Automation_Practise_application.Validate_Sign_Up" time="31.875">
+      <system-out>
+        <![CDATA[
+✅ Given I open browser and load the url✅ Then homepage should be displayed✅ When I click on SignIn Menu✅ Then I should be navigated to Authentication page✅ And Create Account panel should be displayed✅ And Already Registered panel should be displayed✅ When I type Email address and Click on Create Account✅ Then I should be navigated to Create Account page✅ When I fill all mandate fields and click on Register Button✅ Then Welcome message should be displayed
+]]>
+      </system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

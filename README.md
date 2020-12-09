@@ -37,4 +37,4 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 - `allure-reporter`
 
 ### Sample Report
-![image](https://user-images.githubusercontent.com/65847528/95663996-8ff71500-0b61-11eb-8081-82c62099fb3e.png)
+![image](https://user-images.githubusercontent.com/65847528/101646968-337b7d80-3a5e-11eb-84e7-32f52e5f278b.png)

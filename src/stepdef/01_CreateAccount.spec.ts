@@ -5,6 +5,7 @@ import authpage from 'src/pages/AuthenticationPage'
 import util from 'utils/Utilities'
 import createaccount from 'src/pages/createAccountPage'
 import constants_acc from 'src/constants/accounts'
+import allureReporter from '@wdio/allure-reporter'
 
 var email:string;
 var password:string;
@@ -14,6 +15,8 @@ Given("I open browser and load the url", ()=> {
 })
 
 Then("homepage should be displayed", ()=> {
+	allureReporter.addFeature('Test homepage logo');
+	allureReporter.addSeverity('minor');
     expect(homepage.doHomepageLogoDisplayed()).to.be.true;
 })
 
@@ -22,6 +25,8 @@ When("I click on SignIn Menu", ()=> {
 })
 
 Then("I should be navigated to Authentication page", ()=> {
+	allureReporter.addFeature('Test Authentication page navigation')
+	allureReporter.addSeverity('critical');
     expect(authpage.authenticationPageNavigationText()).equals("Authentication")
 })
 
@@ -34,6 +39,8 @@ Then("Already Registered panel should be displayed", ()=> {
 })
 
 When("I type Email address and Click on Create Account", ()=> {
+	allureReporter.addFeature('Test successfull account creation message')
+	allureReporter.addSeverity('blocker');
     email = util.generateString(7)+"@test.com";
     console.log("Email Generated: "+email);
     var email_field_status = authpage.setEmail(email)
