@@ -11,7 +11,7 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 ## Runing a Test and Generate Report
 ```
 1. In the terminal, perform `npm run test` to start the script execution
-2. In the terminal, perform `npm run report` to start the script execution
+2. In the terminal, perform `npm run report` to generate report
 ```
 
 ## Runing a Test in firefox
