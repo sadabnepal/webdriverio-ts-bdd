@@ -1,10 +1,10 @@
-# WDIO6_TypeScript_BDD
+# WDIO_TypeScript_BDD
 This is a sample project that uses WebdriverIO and TypeScript. This project is useful not only as an example of WebdriverIO and TypeScript playing nicely together, but it includes examples of the PageObject pattern and some practical examples for using WebdriverIO to build an automated test suite with Cucumber & Chai.
 
 ## Getting Started
 ```
-1. git clone https://github.com/sadabnepal/WDIO6_TypeScript_BDD.git
-2. Navigate to `WDIO6_TypeScript_BDD`
+1. git clone https://github.com/sadabnepal/WDIO_TypeScript_BDD.git
+2. Navigate to `WDIO_TypeScript_BDD`
 3. In the terminal, Perform "npm i" to install all the dependencies present in the package.json file.
 ```
 
