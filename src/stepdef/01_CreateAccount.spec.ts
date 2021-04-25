@@ -1,4 +1,4 @@
-import {Given, When, Then} from 'cucumber'
+import {Given, When, Then} from '@cucumber/cucumber'
 import {expect} from 'chai'
 import homepage from 'src/pages/homepage';
 import authpage from 'src/pages/AuthenticationPage'
@@ -6,6 +6,7 @@ import util from 'utils/Utilities'
 import createaccount from 'src/pages/createAccountPage'
 import constants_acc from 'src/constants/accounts'
 import allureReporter from '@wdio/allure-reporter'
+import WaitUtils from 'utils/WaitUtils';
 
 var email:string;
 var password:string;
@@ -50,7 +51,7 @@ When("I type Email address and Click on Create Account", ()=> {
 
 Then("I should be navigated to Create Account page", ()=> {
     expect(createaccount.accountCreationForm_isDisplayed()).to.be.true;
-    util.waitUntillConidtion(
+    WaitUtils.waitUntillCondition(
         createaccount.getAccountCreationHeaderText() === constants_acc.CREATE_ACCOUNT_LABEL,
         5000,
         "Failed to load Create Account Page"
@@ -65,7 +66,6 @@ When("I fill all mandate fields and click on Register Button", ()=> {
 })
 
 Then("Welcome message should be displayed", ()=> {
-    expect(createaccount.getError()).is.not.true;
     console.log("Message: "+createaccount.getWelcomeMessage())
     expect(createaccount.getWelcomeMessage()).equals(constants_acc.WELCOME_TO_ACCOUNT_MSG);
 })

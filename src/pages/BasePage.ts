@@ -1,47 +1,46 @@
+import { WaitEnum } from "src/enums/WaitEnums";
+import WaitUtils from "utils/WaitUtils";
+
 export default class basepage {
     open() {
-        return browser.url("")
+        browser.maximizeWindow();
+        return browser.url("");
     }
 
-    doClick(element:any) {
-        element.waitForDisplayed();
-        element.click();
+    protected doClick(element:WebdriverIO.Element, waitType:WaitEnum):void {
+        WaitUtils.WaitFactory(element, waitType).click();
     }
 
-    doSetValue(element:any, value:string) {
-        element.waitForDisplayed();
-        element.clearValue();
-        element.setValue(value);
+    protected doSetValue(element:WebdriverIO.Element, value:string, waitType:WaitEnum):void {
+        WaitUtils.WaitFactory(element, waitType).setValue(value);
     }
     
-    doGetText(element:any):string {
-        element.waitForDisplayed()
-        return element.getText();
+    protected doGetText(element:WebdriverIO.Element, waitType:WaitEnum):string {
+        return WaitUtils.WaitFactory(element, waitType).getText().trim();
     }
 
-    getElement(element:any) {
-        element.waitForDisplayed();
+    protected getElement(element:WebdriverIO.Element, waitType:WaitEnum):WebdriverIO.Element {
+        return WaitUtils.WaitFactory(element, waitType);
+    }
+
+    protected getElements(element:WebdriverIO.ElementArray, waitType:WaitEnum):WebdriverIO.ElementArray {
+        WaitUtils.WaitFactory(element[0], waitType);
         return element;
     }
 
-    doIsDisplayed(element:any):boolean {
-        element.waitForDisplayed();
-        return element.isDisplayed();
+    protected doIsDisplayed(element:WebdriverIO.Element, waitType:WaitEnum):boolean {
+        return this.getElement(element, waitType).isDisplayed();
     }
 
-    doIsExists(element:any): boolean {
-        try { element.waitForDisplayed(); } 
-        catch (error) { }
-        return element.isExisting();
+    protected doIsExists(element:WebdriverIO.Element, waitType:WaitEnum): boolean {
+        return this.getElement(element, waitType).isExisting();
     }
 
-    doSelectByAttribute(element:any, attribute:string, value:string) {
-        element.waitForEnabled();
-        element.selectByAttribute(attribute, value);
+    doSelectByAttribute(element:WebdriverIO.Element, attribute:string, value:string, waitType:WaitEnum):void {
+        this.getElement(element, waitType).selectByAttribute(attribute, value);
     }
 
-    doSelectByVisibleText(element:any, text:string) {
-        element.waitForEnabled();
-        element.selectByVisibleText(text);
+    doSelectByVisibleText(element:WebdriverIO.Element, text:string, waitType:WaitEnum):void {
+        this.getElement(element, waitType).selectByVisibleText(text);
     }
 }
