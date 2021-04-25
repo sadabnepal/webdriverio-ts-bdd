@@ -1,5 +1,5 @@
 {
-  "name": "wdio6_typescript_bdd",
+  "name": "WebdriverIOTypeScriptBDD",
   "version": "1.0.0",
   "description": "WebdriverIO with TypeScript, BDD framework to test Automation practise website",
   "main": "index.js",
