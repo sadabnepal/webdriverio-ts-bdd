@@ -11,7 +11,6 @@ class createAccount extends basepage {
     private get titleMrs_radio() { return $('#id_gender2') }
     private get firstname_txt() { return $('#customer_firstname') }
     private get lastname_txt() { return $('#customer_lastname')}
-    private get email_txt() { return $('#email') }
     private get password_txt() { return $('#passwd') }
     private get dob_day_drp() { return $('#days') }
     private get dob_month_drp() { return $('#months') }
@@ -20,7 +19,6 @@ class createAccount extends basepage {
     private get addressLname_txt() { return $('#lastname') }
     private get company_txt() { return $('#company') }
     private get address1_txt() { return $('#address1') }
-    private get address2_txt() { return $('#address2') }
     private get city_txt() { return $('#city') }
     private get state_drp() { return $('#id_state') }
     private get postcode_txt() { return $('#postcode') }
@@ -30,7 +28,6 @@ class createAccount extends basepage {
     private get mobilePhone_txt() { return $('#phone_mobile') }
     private get addressAlias_txt() { return $('#alias') }
     private get register_btn() { return $('#submitAccount') }
-    private get alert_danger() { return $('.alert.alert-danger>ol>li') }
     private get welcome_msg() { return $('.info-account') }
 
 
@@ -61,10 +58,6 @@ class createAccount extends basepage {
         this.doSetValue(this.mobilePhone_txt, signupdata.Mobile_No, WaitEnum.DISPLAYED)
         this.doSetValue(this.addressAlias_txt, signupdata.Address_Alias, WaitEnum.DISPLAYED)
         this.doClick(this.register_btn, WaitEnum.CLICKABLE)
-    }
-
-    getError():boolean {
-        return this.doIsExists(this.alert_danger, WaitEnum.EXIST)
     }
 
     getWelcomeMessage():string {
