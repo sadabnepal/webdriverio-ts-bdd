@@ -9,7 +9,6 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    runner: 'local',
     specs: [
         './src/features/*.feature'
     ],
@@ -70,8 +69,7 @@ exports.config = {
         require: ['./src/stepdef/*.spec.ts'],
         backtrace: true,
         requireModule: [
-            "tsconfig-paths/register",
-            () => { require('ts-node').register({ files: true }) },
+            "tsconfig-paths/register"
         ],
         dryRun: false,
         failFast: false,
