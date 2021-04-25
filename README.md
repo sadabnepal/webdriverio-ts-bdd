@@ -16,9 +16,9 @@ This is a sample project that uses WebdriverIO and TypeScript. This project is u
 
 ## Runing a Test in firefox
 1. Uncomment **firefox configuration** from **capabilities section** present in `wdio.conf.js` file
-2. Run below command `npm run startFirefox`	in terminal and leave it open <br>
+2. Run below command `npm run startFirefox` in terminal and leave it open <br>
 	**Note: ** *make sure you enter correct path of firefox installed in your system in package.json file*
-3. Open new terminal and rub `npm run test`. Execution will start in both chrome and firefox
+3. Open new terminal and run `npm test`. Execution will start in both chrome and firefox
 
 ### Folder structure
 - `src` - This folder contains sub folders `page` and `features`
