@@ -63,7 +63,7 @@ npm run report
 ### Runing a Test in firefox
 ```bash
 ------------------------------------------------------------------------------------------------------------
-This is alternate approach and prefer to use only if `selenium-standalone` does not work inside proxy network
+Use only if `selenium-standalone` does not work inside proxy network
 ------------------------------------------------------------------------------------------------------------
 1. Uncomment `firefox configuration` from `capabilities section` present in `wdio.conf.js` file
 2. Run below command `npm run startFirefox` in terminal and leave it open 
@@ -73,10 +73,10 @@ This is alternate approach and prefer to use only if `selenium-standalone` does 
 
 Inside Corporate network If fails to download driver files then:
 ```bash
-Download the latest chromedriver as per your browser version from `https://chromedriver.chromium.org/downloads`
+Download the latest driver from `https://chromedriver.chromium.org/downloads`
 Delete the existing `chromedriver_win32.zip` file and add newly downloaded zip file 
 Run `installchromedriver.bat` command from cmd or double click on bat file
-It will download the driver from `drivers-->chromedriver_win32.zip` instead of going to external network
+It will download the driver from `drivers-->chromedriver_win32.zip`
 
 ```
 
