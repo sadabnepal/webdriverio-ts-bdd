@@ -62,9 +62,9 @@ npm run report
 
 ### Runing a Test in firefox
 ```bash
-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 Use only if `selenium-standalone` does not work inside proxy network
-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 1. Uncomment `firefox configuration` from `capabilities section` present in `wdio.conf.js` file
 2. Run below command `npm run startFirefox` in terminal and leave it open 
 	**Note: Make sure you enter correct path of firefox installed in your system in package.json file
