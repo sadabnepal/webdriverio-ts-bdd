@@ -11,6 +11,6 @@
     "module": "commonJs",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node", "webdriverio/sync", "@wdio/cucumber-framework"]
+    "types": ["node", "webdriverio/sync", "@wdio/cucumber-framework", "expect-webdriverio"]
   }
 }

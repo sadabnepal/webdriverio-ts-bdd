@@ -1,5 +1,7 @@
-exports.config = {
-	// =====================
+import allure from '@wdio/allure-reporter';
+
+export const config:WebdriverIO.Config = {
+    // =====================
     // Server Configurations
     // =====================
 	runner: 'local',
@@ -50,16 +52,17 @@ exports.config = {
     reporters: [
 			['allure', 
                 {
-                    outputDir: 'allure-results',
+                    outputDir: './reports/allure-results',
                     disableWebdriverStepsReporting: true,
-                    disableWebdriverScreenshotsReporting: true,
+                    disableWebdriverScreenshotsReporting: false,
+                    useCucumberStepReporter: true
                 }
 			],
 			['junit', 
 				{
-					outputDir: './Report',
-					outputFileFormat: function(options) {
-					return `results-${new Date().getTime()}.xml`;
+					outputDir: './reports/junit',
+					outputFileFormat: (options:any)=> {
+					    return `results-${new Date().getTime()}.xml`;
 					}
 				}
 			]
@@ -95,13 +98,16 @@ exports.config = {
     // },
     // beforeCommand: function (commandName, args) {
     // },
-    // beforeFeature: function (uri, feature, scenarios) {
+    // beforeFeature: function (uri, feature) {
     // },
-    // beforeScenario: function (uri, feature, scenario, sourceLocation, context) {
-    // },
+    beforeScenario: function (world) {
+        allure.addEnvironment("BROWSER", "Chrome");
+        allure.addEnvironment("BROWSER_VERSION", "90.0.8.9");
+        allure.addEnvironment("PLATFORM", "Windows");
+    },
     // beforeStep: function ({ uri, feature, step }, context) {
     // },
-    // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
+    // afterStep: function (steps, context) {
     // },
     // afterScenario: function (uri, feature, scenario, result, sourceLocation, context) {
     // },

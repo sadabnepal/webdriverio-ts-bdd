@@ -11,22 +11,25 @@ class Authentication extends basepage {
     private get email_input_status() { return $('#create-account_form>.form_content>div:nth-child(3)') }
     private get createAccount_btn() { return $('#SubmitCreate') }
 
-    authenticationPageNavigationText(): string {
-        return this.doGetText(this.navigation_page, WaitEnum.DISPLAYED)
+    authenticationPageNavigation(): WebdriverIO.Element {
+        return this.getElement(this.navigation_page, WaitEnum.DISPLAYED)
     }
 
-    createAccount_panel_isDisplayed(): boolean {
-        return this.doIsDisplayed(this.createAccount_panel, WaitEnum.DISPLAYED)
+    getCreateAccountPanel(): WebdriverIO.Element {
+        return this.getElement(this.createAccount_panel, WaitEnum.DISPLAYED);
     }
 
-    alreadyRegister_panel_isDisplayed(): boolean {
-        return this.doIsDisplayed(this.alreadyRegister_panel, WaitEnum.DISPLAYED)
+    getAlreadyRegisterPanel(): WebdriverIO.Element {
+        return this.getElement(this.alreadyRegister_panel, WaitEnum.DISPLAYED)
     }
 
-    setEmail(email:string):string {
+    getEmailInputStatus():WebdriverIO.Element {
+        return this.getElement(this.email_input_status, WaitEnum.NONE);
+    }
+
+    setEmail(email:string):void {
         this.doSetValue(this.createEmail_input, email, WaitEnum.DISPLAYED)
         browser.keys('Tab');
-        return this.email_input_status.getAttribute('class');
     }
 
     clickOnCreateAccount():void {

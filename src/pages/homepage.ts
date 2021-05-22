@@ -10,8 +10,8 @@ class homepage extends basepage {
         return super.open()
     }
 
-    doHomepageLogoDisplayed():boolean {
-        return this.doIsDisplayed(this.homepage_logo, WaitEnum.DISPLAYED)
+    getHomepageLogo():WebdriverIO.Element {
+        return this.getElement(this.homepage_logo, WaitEnum.DISPLAYED)
     }
 
     clickOnSignin():void {

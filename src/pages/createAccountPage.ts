@@ -1,10 +1,9 @@
 import { WaitEnum } from 'src/enums/WaitEnums'
 import basepage from 'src/pages/BasePage'
-import signupdata from 'src/testdata/SignUp.json'
 
-class createAccount extends basepage {
+class CreateAccount extends basepage {
 
-    private get createAccountHeader() { return $('#center_column>div>h1') }
+    private get CreateAccountHeader() { return $('#center_column>div>h1') }
     private get accountCreationForm() { return $('#account-creation_form') }
     private get pagesubHeading() { return $$('.page-subheading') }
     private get titleMr_radio() { return $('#id_gender1') }
@@ -32,31 +31,96 @@ class createAccount extends basepage {
 
 
     getAccountCreationHeaderText():string {
-        return this.doGetText(this.createAccountHeader, WaitEnum.DISPLAYED)
+        return this.doGetText(this.CreateAccountHeader, WaitEnum.DISPLAYED)
     }
 
-    accountCreationForm_isDisplayed():boolean {
-        return this.doIsDisplayed(this.accountCreationForm, WaitEnum.DISPLAYED)
+    getAccountCreationForm():WebdriverIO.Element {
+        return this.getElement(this.accountCreationForm, WaitEnum.DISPLAYED)
     }
 
-    submitAccountCreationForm(password: string):void {
-        this.doSetValue(this.firstname_txt, signupdata.First_Name, WaitEnum.DISPLAYED)
-        this.doSetValue(this.lastname_txt, signupdata.Last_Name, WaitEnum.DISPLAYED)
+    setFirstName(fname:string):CreateAccount {
+        this.doSetValue(this.firstname_txt, fname, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setLastName(lname:string):CreateAccount {
+        this.doSetValue(this.lastname_txt, lname, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setPassword(password:string):CreateAccount {
         this.doSetValue(this.password_txt, password, WaitEnum.DISPLAYED)
-        this.doSelectByAttribute(this.dob_day_drp, 'value', signupdata.DOB_Day, WaitEnum.EXIST)
-        this.doSelectByAttribute(this.dob_month_drp, 'value', signupdata.DOB_Month, WaitEnum.EXIST)
-        this.doSelectByAttribute(this.dob_year_drp, 'value', signupdata.DOB_Year, WaitEnum.EXIST)
-        this.doSetValue(this.addressFname_txt, signupdata.First_Name, WaitEnum.DISPLAYED)
-        this.doSetValue(this.addressLname_txt, signupdata.Last_Name, WaitEnum.DISPLAYED)
-        this.doSetValue(this.company_txt, signupdata.Company, WaitEnum.DISPLAYED)
-        this.doSetValue(this.address1_txt, signupdata.Address1, WaitEnum.DISPLAYED)
-        this.doSetValue(this.city_txt, signupdata.City, WaitEnum.DISPLAYED)
-        this.doSelectByVisibleText(this.state_drp, signupdata.State, WaitEnum.EXIST)
-        this.doSetValue(this.postcode_txt, signupdata.PostCode, WaitEnum.EXIST)
-        this.doSelectByVisibleText(this.country_drp, signupdata.Country, WaitEnum.EXIST)
-        this.doSetValue(this.additionalInfo_txt, signupdata.Additional_Info, WaitEnum.DISPLAYED)
-        this.doSetValue(this.mobilePhone_txt, signupdata.Mobile_No, WaitEnum.DISPLAYED)
-        this.doSetValue(this.addressAlias_txt, signupdata.Address_Alias, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    selectDayOfDOB(day:string):CreateAccount {
+        this.doSelectByAttribute(this.dob_day_drp, 'value', day, WaitEnum.EXIST)
+        return this;
+    }
+    selectMonthofDOB(month:string):CreateAccount {
+        this.doSelectByAttribute(this.dob_month_drp, 'value', month, WaitEnum.EXIST)
+        return this;
+    }
+    selectYearOfDOB(year:string):CreateAccount {
+        this.doSelectByAttribute(this.dob_year_drp, 'value', year, WaitEnum.EXIST)
+        return this;
+    }
+
+    setAddressFirstName(fname:string):CreateAccount {
+        this.doSetValue(this.addressFname_txt, fname, WaitEnum.DISPLAYED)
+        return this;
+    }
+    setAddressLastName(lname):CreateAccount {
+        this.doSetValue(this.addressLname_txt, lname, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setCompany(company:string):CreateAccount {
+        this.doSetValue(this.company_txt, company, WaitEnum.DISPLAYED)
+        return this;
+    }
+    
+    setAddress1(address1:string):CreateAccount {
+        this.doSetValue(this.address1_txt, address1, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setCity(city:string):CreateAccount {
+        this.doSetValue(this.city_txt, city, WaitEnum.DISPLAYED)
+        return this;
+    }
+    
+    selectState(state:string):CreateAccount {
+        this.doSelectByVisibleText(this.state_drp, state, WaitEnum.EXIST)
+        return this;
+    }
+    
+    setPostCode(postcode:string):CreateAccount {
+        this.doSetValue(this.postcode_txt, postcode, WaitEnum.EXIST)
+        return this;
+    }
+
+    selectCountry(country:string):CreateAccount {
+        this.doSelectByVisibleText(this.country_drp, country, WaitEnum.EXIST)
+        return this;
+    }
+
+    setAdditionalInfo(additonalInfo:string):CreateAccount {
+        this.doSetValue(this.additionalInfo_txt, additonalInfo, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setMobilePhone(mobileNo:string):CreateAccount {
+        this.doSetValue(this.mobilePhone_txt, mobileNo, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    setAddressAlias(addressAlias:string):CreateAccount {
+        this.doSetValue(this.addressAlias_txt, addressAlias, WaitEnum.DISPLAYED)
+        return this;
+    }
+
+    clickOnRegisterButton() {
         this.doClick(this.register_btn, WaitEnum.CLICKABLE)
     }
 
@@ -64,4 +128,4 @@ class createAccount extends basepage {
         return this.doGetText(this.welcome_msg, WaitEnum.DISPLAYED)
     }
 }
-export default new createAccount()
+export default new CreateAccount()

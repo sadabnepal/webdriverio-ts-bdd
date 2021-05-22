@@ -1,5 +1,5 @@
 # WebdriverIOTypeScriptBDD
-This is a sample project that uses WebdriverIO and TypeScript. This project is useful not only as an example of WebdriverIO and TypeScript playing nicely together, but it includes examples of the PageObject pattern and some practical examples for using WebdriverIO to build an automated test suite with Cucumber & Chai.
+This is a sample Cucumber Framework that uses WebdriverIO and TypeScript. This project is useful not only as an example of WebdriverIO and TypeScript playing nicely together, but it also includes some practical examples of the Page Object design pattern
 
 
 ### Requirements
@@ -44,8 +44,8 @@ npm run report
 |   ├───pages
 |   │  	    ├───AuthenticationPahe.ts
 |   │	    ├───BasePage.ts
-|   │	    ├───createAccountPage.ts
-|   │	    └───homepage.ts
+|   │	    ├───CreateAccountPage.ts
+|   │	    └───HomePage.ts
 |   ├───stepdef
 |   │       └───TC01_CreateAccount.spec.feature
 |   │      
@@ -53,11 +53,12 @@ npm run report
 |           └───SignUp.json
 ├───Utils
 |       ├───Utilities.ts
+|       ├───AssertionUtils.ts
 |       └───WaitUtils.ts
 ├───package.json
 ├───README.md
 ├───tsconfig.json
-└───wdio.conf.js
+└───wdio.conf.ts
 ```
 
 ### Runing a Test in firefox
@@ -81,4 +82,5 @@ It will download the driver from `drivers-->chromedriver_win32.zip`
 ```
 
 ### Sample Report
-![image](https://user-images.githubusercontent.com/65847528/101646968-337b7d80-3a5e-11eb-84e7-32f52e5f278b.png)
+![image](https://user-images.githubusercontent.com/65847528/119223707-8a5ea600-bb18-11eb-8d49-1b845814bcb8.png)
+
