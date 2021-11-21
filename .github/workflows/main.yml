@@ -40,6 +40,7 @@ jobs:
     - run: npm run regression
 
     - name: Generate Cucumber HTML Report
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: HTML Report

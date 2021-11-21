@@ -13,7 +13,7 @@ Given("I open browser and load the url", () => {
 })
 
 Then("I validate page title", () => {
-    AssertionUtils.validatePageTitle("My 11 Store");
+    AssertionUtils.validatePageTitle("My Store");
 })
 
 Then("homepage should be displayed", () => {
