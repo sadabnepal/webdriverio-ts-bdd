@@ -1,10 +1,9 @@
-# WebdriverIOTypeScriptBDD
+# WebdriverIOTypeScriptBDD (v7)
 This is a sample Cucumber Framework that uses WebdriverIO and TypeScript. This project is useful not only as an example of WebdriverIO and TypeScript playing nicely together, but it also includes some practical examples of the Page Object design pattern
-
 
 ### Requirements
 -   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
--   npm >= 6.14.x - [how to install NPM](https://www.npmjs.com/get-npm)
+-   npm >= 6.14.x - [No explicit download required, it comes with node]
 
 ### Getting Started
 Clone Repository
@@ -18,9 +17,11 @@ Install the dependencies:
 npm install
 ```
 
-Run e2e tests:
+Run tests:
 ```bash
-npm test
+npm test (to run all tests)
+npm run smoke (to run smoke suite)
+npm run regression (to run regression suite)
 ```
 
 Generate allure report:
@@ -28,25 +29,33 @@ Generate allure report:
 npm run report
 ```
 
+Emailable HTML Report:
+```
+<ROOT_PROJECT_FOLDER>reports/html/index.html
+```
+### Key Features
+	- Cucumber BDD framework
+	- Page Object Design pattern
+	- Allure, Spec and Cucumber HTML report
+	- Automatic test trigger using Github action
+
 ### Folder Structure
 ```
-├───drivers
-|       ├───chromedriver_win32.zip
-|       └───geckodriver.exe
 ├───src
 |   ├───constants
 |   │       └───accounts.ts
 │   ├───enums
 |   │       └───WaitEnums.ts
 |   ├───features
+|   │  	    ├───smoke.feature
 |   │       └───TC01_CreateAccount.feature
 |   │      
 |   ├───pages
-|   │  	    ├───AuthenticationPahe.ts
+|   │  	    ├───AuthenticationPage.ts
 |   │	    ├───BasePage.ts
 |   │	    ├───CreateAccountPage.ts
 |   │	    └───HomePage.ts
-|   ├───stepdef
+|   ├───steps
 |   │       └───TC01_CreateAccount.spec.feature
 |   │      
 |   └───testdata
@@ -60,27 +69,6 @@ npm run report
 ├───tsconfig.json
 └───wdio.conf.ts
 ```
-
-### Runing a Test in firefox
-```bash
----------------------------------------------------------------------------------------------------------
-Use only if `selenium-standalone` does not work inside proxy network
----------------------------------------------------------------------------------------------------------
-1. Uncomment `firefox configuration` from `capabilities section` present in `wdio.conf.js` file
-2. Run below command `npm run startFirefox` in terminal and leave it open 
-	**Note: Make sure you enter correct path of firefox installed in your system in package.json file
-3. Open new terminal and run `npm test`. Execution will start in both chrome and firefox
-```
-
-### Inside Corporate network If fails to download driver files then:
-```bash
-Download the latest driver from `https://chromedriver.chromium.org/downloads`
-Delete the existing `chromedriver_win32.zip` file and add newly downloaded zip file 
-Run `installchromedriver.bat` command from cmd or double click on bat file
-It will download the driver from `drivers-->chromedriver_win32.zip`
-
-```
-
 ### Sample Report
-![image](https://user-images.githubusercontent.com/65847528/119223707-8a5ea600-bb18-11eb-8d49-1b845814bcb8.png)
+![image](https://user-images.githubusercontent.com/65847528/142774279-1e18cbd2-9869-4fd9-ac3b-af397022fa73.png)
 

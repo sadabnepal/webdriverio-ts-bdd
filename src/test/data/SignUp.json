@@ -1,0 +1,16 @@
+{
+    "First_Name": "Automation",
+    "Last_Name": "User",
+    "DOB_Day": "1",
+    "DOB_Month": "1",
+    "DOB_Year": "1990",
+    "Company": "Automation Company",
+    "Address1": "Learning Street",
+    "City": "Newburgh",
+    "State": "New York",
+    "PostCode": "00000",
+    "Country": "United States",
+    "Additional_Info": "Testing Automation Practise",
+    "Mobile_No": "123456789",
+    "Address_Alias": "Automation Address"
+}

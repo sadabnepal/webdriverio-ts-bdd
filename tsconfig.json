@@ -3,11 +3,10 @@
     "baseUrl": ".",
     "allowJs": true,
     "paths": {
-      "*": ["./*"],
       "src/*": ["./src/*"],
     },
     "resolveJsonModule": true,
-    "target": "ES2019",
+    "target": "ES5",
     "module": "commonJs",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
