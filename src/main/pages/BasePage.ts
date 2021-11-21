@@ -1,5 +1,5 @@
-import { WaitEnum } from "src/main/enums/WaitEnums";
-import WaitUtils from "src/main/utils/WaitUtils";
+import { WaitEnum } from "../../main/enums/WaitEnums";
+import WaitUtils from "../../main/utils/WaitUtils";
 import { logStep } from "../utils/reporter";
 
 export default class BasePage {

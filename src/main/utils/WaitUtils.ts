@@ -1,4 +1,4 @@
-import { WaitEnum } from "src/main/enums/WaitEnums";
+import { WaitEnum } from "../../main/enums/WaitEnums";
 
 class WaitUtils {
 

@@ -68,7 +68,7 @@ export const config: WebdriverIO.Config = {
         retry: 0,
         require: ['./src/test/steps/*.ts'],
         backtrace: false,
-        requireModule: ["tsconfig-paths/register"],
+        requireModule: [],
         dryRun: false,
         failFast: false,
         format: ['pretty'],

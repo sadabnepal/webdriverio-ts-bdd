@@ -1,12 +1,12 @@
 import { Given, When, Then } from '@cucumber/cucumber'
-import homepage from 'src/main/pages/HomePage';
-import authpage from 'src/main/pages/AuthenticationPage'
-import createaccount from 'src/main/pages/CreateAccountPage'
-import { CREATE_ACCOUNT_LABEL, WELCOME_TO_ACCOUNT_MSG } from 'src/main/constants/accounts'
-import WaitUtils from 'src/main/utils/WaitUtils';
-import AssertionUtils from 'src/main/utils/AssertionUtils';
-import signupdata from 'src/test/data/SignUp.json'
+import authpage from '../../main/pages/AuthenticationPage'
+import createaccount from '../../main/pages/CreateAccountPage'
+import { CREATE_ACCOUNT_LABEL, WELCOME_TO_ACCOUNT_MSG } from '../../main/constants/accounts'
+import WaitUtils from '../../main/utils/WaitUtils';
+import AssertionUtils from '../../main/utils/AssertionUtils';
+import signupdata from '../../test/data/SignUp.json'
 import fakerAPI from 'faker'
+import homepage from '../../main/pages/homepage';
 
 Given("I open browser and load the url", () => {
     homepage.open()

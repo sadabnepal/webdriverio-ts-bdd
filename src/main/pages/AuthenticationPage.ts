@@ -1,5 +1,5 @@
-import { WaitEnum } from 'src/main/enums/WaitEnums'
-import BasePage from 'src/main/pages/BasePage'
+import { WaitEnum } from '../../main/enums/WaitEnums'
+import BasePage from '../../main/pages/BasePage'
 
 class Authentication extends BasePage {
 
