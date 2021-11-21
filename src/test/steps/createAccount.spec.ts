@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@cucumber/cucumber'
 import authpage from '../../main/pages/AuthenticationPage'
-import createaccount from '../../main/pages/CreateAccountPage'
+import createaccount from '../../main/pages/createAccountPage'
 import { CREATE_ACCOUNT_LABEL, WELCOME_TO_ACCOUNT_MSG } from '../../main/constants/accounts'
 import WaitUtils from '../../main/utils/WaitUtils';
 import AssertionUtils from '../../main/utils/AssertionUtils';
