@@ -2,9 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
-    "paths": {
-      "src/*": ["./src/*"],
-    },
     "resolveJsonModule": true,
     "target": "ES5",
     "module": "commonJs",
