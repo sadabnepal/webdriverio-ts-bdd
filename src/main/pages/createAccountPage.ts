@@ -1,131 +1,101 @@
-import { WaitEnum } from '../../main/enums/WaitEnums'
 import BasePage from '../../main/pages/BasePage'
 
 class CreateAccount extends BasePage {
 
-    private get CreateAccountHeader() { return $('#center_column>div>h1') }
-    private get accountCreationForm() { return $('#account-creation_form') }
-    private get pagesubHeading() { return $$('.page-subheading') }
-    private get titleMr_radio() { return $('#id_gender1') }
-    private get titleMrs_radio() { return $('#id_gender2') }
-    private get firstname_txt() { return $('#customer_firstname') }
-    private get lastname_txt() { return $('#customer_lastname') }
-    private get password_txt() { return $('#passwd') }
-    private get dob_day_drp() { return $('#days') }
-    private get dob_month_drp() { return $('#months') }
-    private get dob_year_drp() { return $('#years') }
-    private get addressFname_txt() { return $('#firstname') }
-    private get addressLname_txt() { return $('#lastname') }
-    private get company_txt() { return $('#company') }
-    private get address1_txt() { return $('#address1') }
-    private get city_txt() { return $('#city') }
-    private get state_drp() { return $('#id_state') }
-    private get postcode_txt() { return $('#postcode') }
-    private get country_drp() { return $('#id_country') }
-    private get additionalInfo_txt() { return $('#other') }
-    private get homePhone_txt() { return $('#phone') }
-    private get mobilePhone_txt() { return $('#phone_mobile') }
-    private get addressAlias_txt() { return $('#alias') }
-    private get register_btn() { return $('#submitAccount') }
-    private get welcome_msg() { return $('.info-account') }
+    get CreateAccountHeader() { return $('#center_column>div>h1') }
+    get accountCreationForm() { return $('#account-creation_form') }
+    get pagesubHeading() { return $$('.page-subheading') }
+    get titleMr_radio() { return $('#id_gender1') }
+    get titleMrs_radio() { return $('#id_gender2') }
+    get firstname_txt() { return $('#customer_firstname') }
+    get lastname_txt() { return $('#customer_lastname') }
+    get password_txt() { return $('#passwd') }
+    get dob_day_drp() { return $('#days') }
+    get dob_month_drp() { return $('#months') }
+    get dob_year_drp() { return $('#years') }
+    get addressFname_txt() { return $('#firstname') }
+    get addressLname_txt() { return $('#lastname') }
+    get company_txt() { return $('#company') }
+    get address1_txt() { return $('#address1') }
+    get city_txt() { return $('#city') }
+    get state_drp() { return $('#id_state') }
+    get postcode_txt() { return $('#postcode') }
+    get country_drp() { return $('#id_country') }
+    get additionalInfo_txt() { return $('#other') }
+    get homePhone_txt() { return $('#phone') }
+    get mobilePhone_txt() { return $('#phone_mobile') }
+    get addressAlias_txt() { return $('#alias') }
+    get register_btn() { return $('#submitAccount') }
+    get welcome_msg() { return $('.info-account') }
 
 
-    getAccountCreationHeaderText(): string {
-        return this.fetchText(this.CreateAccountHeader, WaitEnum.DISPLAYED)
+    async setFirstName(fname: string) {
+        await this.setData(this.firstname_txt, fname)
     }
 
-    getAccountCreationForm() {
-        return this.getElement(this.accountCreationForm, WaitEnum.DISPLAYED)
+    async setLastName(lname: string) {
+        await this.setData(this.lastname_txt, lname)
     }
 
-    setFirstName(fname: string) {
-        this.setData(this.firstname_txt, fname, WaitEnum.DISPLAYED)
-        return this;
+    async setPassword(password: string) {
+        await this.setData(this.password_txt, password)
     }
 
-    setLastName(lname: string) {
-        this.setData(this.lastname_txt, lname, WaitEnum.DISPLAYED)
-        return this;
+    async selectDayOfDOB(day: string) {
+        await this.selectByAttribute(this.dob_day_drp, 'value', day)
+    }
+    async selectMonthofDOB(month: string) {
+        await this.selectByAttribute(this.dob_month_drp, 'value', month)
+    }
+    async selectYearOfDOB(year: string) {
+        await this.selectByAttribute(this.dob_year_drp, 'value', year)
     }
 
-    setPassword(password: string) {
-        this.setData(this.password_txt, password, WaitEnum.DISPLAYED)
-        return this;
+    async setAddressFirstName(fname: string) {
+        await this.setData(this.addressFname_txt, fname)
+    }
+    async setAddressLastName(lname) {
+        await this.setData(this.addressLname_txt, lname)
     }
 
-    selectDayOfDOB(day: string) {
-        this.selectByAttribute(this.dob_day_drp, 'value', day, WaitEnum.EXIST)
-        return this;
-    }
-    selectMonthofDOB(month: string) {
-        this.selectByAttribute(this.dob_month_drp, 'value', month, WaitEnum.EXIST)
-        return this;
-    }
-    selectYearOfDOB(year: string) {
-        this.selectByAttribute(this.dob_year_drp, 'value', year, WaitEnum.EXIST)
-        return this;
+    async setCompany(company: string) {
+        await this.setData(this.company_txt, company)
     }
 
-    setAddressFirstName(fname: string) {
-        this.setData(this.addressFname_txt, fname, WaitEnum.DISPLAYED)
-        return this;
-    }
-    setAddressLastName(lname) {
-        this.setData(this.addressLname_txt, lname, WaitEnum.DISPLAYED)
-        return this;
+    async setAddress1(address1: string) {
+        await this.setData(this.address1_txt, address1)
     }
 
-    setCompany(company: string) {
-        this.setData(this.company_txt, company, WaitEnum.DISPLAYED)
-        return this;
+    async setCity(city: string) {
+        await this.setData(this.city_txt, city)
     }
 
-    setAddress1(address1: string) {
-        this.setData(this.address1_txt, address1, WaitEnum.DISPLAYED)
-        return this;
+    async selectState(state: string) {
+        this.selectByText(this.state_drp, state)
     }
 
-    setCity(city: string) {
-        this.setData(this.city_txt, city, WaitEnum.DISPLAYED)
-        return this;
+    async setPostCode(postcode: string) {
+        await this.setData(this.postcode_txt, postcode)
     }
 
-    selectState(state: string) {
-        this.selectByText(this.state_drp, state, WaitEnum.EXIST)
-        return this;
+    async selectCountry(country: string) {
+        await this.selectByText(this.country_drp, country)
     }
 
-    setPostCode(postcode: string) {
-        this.setData(this.postcode_txt, postcode, WaitEnum.EXIST)
-        return this;
+    async setAdditionalInfo(additonalInfo: string) {
+        await this.setData(this.additionalInfo_txt, additonalInfo)
     }
 
-    selectCountry(country: string) {
-        this.selectByText(this.country_drp, country, WaitEnum.EXIST)
-        return this;
+    async setMobilePhone(mobileNo: string) {
+        await this.setData(this.mobilePhone_txt, mobileNo)
     }
 
-    setAdditionalInfo(additonalInfo: string) {
-        this.setData(this.additionalInfo_txt, additonalInfo, WaitEnum.DISPLAYED)
-        return this;
+    async setAddressAlias(addressAlias: string) {
+        await this.setData(this.addressAlias_txt, addressAlias)
     }
 
-    setMobilePhone(mobileNo: string) {
-        this.setData(this.mobilePhone_txt, mobileNo, WaitEnum.DISPLAYED)
-        return this;
-    }
-
-    setAddressAlias(addressAlias: string) {
-        this.setData(this.addressAlias_txt, addressAlias, WaitEnum.DISPLAYED)
-        return this;
-    }
-
-    clickOnRegisterButton() {
-        this.clickElement(this.register_btn, WaitEnum.CLICKABLE)
-    }
-
-    getWelcomeMessage(): string {
-        return this.fetchText(this.welcome_msg, WaitEnum.DISPLAYED)
+    async clickOnRegisterButton() {
+        await this.clickElement(this.register_btn)
     }
 }
 export default new CreateAccount()
