@@ -1,39 +1,22 @@
-import { WaitEnum } from '../../main/enums/WaitEnums'
 import BasePage from '../../main/pages/BasePage'
 
 class Authentication extends BasePage {
 
-    private get navigation_page() { return $('.navigation_page') }
-    private get createAccount_panel() { return $('#create-account_form') }
-    private get alreadyRegister_panel() { return $('#login_form') }
+    get navigation_page() { return $('.navigation_page') }
+    get createAccount_panel() { return $('#create-account_form') }
+    get alreadyRegister_panel() { return $('#login_form') }
 
-    private get createEmail_input() { return $('#email_create') }
-    private get email_input_status() { return $('#create-account_form>.form_content>div:nth-child(3)') }
-    private get createAccount_btn() { return $('#SubmitCreate') }
+    get createEmail_input() { return $('#email_create') }
+    get email_input_status() { return $('#create-account_form>.form_content>div:nth-child(3)') }
+    get createAccount_btn() { return $('#SubmitCreate') }
 
-    authenticationPageNavigation() {
-        return this.getElement(this.navigation_page, WaitEnum.DISPLAYED)
-    }
-
-    getCreateAccountPanel() {
-        return this.getElement(this.createAccount_panel, WaitEnum.DISPLAYED);
-    }
-
-    getAlreadyRegisterPanel() {
-        return this.getElement(this.alreadyRegister_panel, WaitEnum.DISPLAYED)
-    }
-
-    getEmailInputStatus() {
-        return this.getElement(this.email_input_status, WaitEnum.NONE);
-    }
-
-    setEmail(email: string) {
-        this.setData(this.createEmail_input, email, WaitEnum.DISPLAYED)
+    async setEmail(email: string) {
+        await this.setData(this.createEmail_input, email)
         browser.keys('Tab');
     }
 
-    clickOnCreateAccount() {
-        this.clickElement(this.createAccount_btn, WaitEnum.CLICKABLE)
+    async clickOnCreateAccount() {
+        await this.clickElement(this.createAccount_btn)
     }
 }
 export default new Authentication()

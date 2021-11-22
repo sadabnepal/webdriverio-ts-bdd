@@ -6,6 +6,11 @@
     "module": "commonJs",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node", "webdriverio/sync", "@wdio/cucumber-framework", "expect-webdriverio"]
+    "types": [
+      "node",
+      "webdriverio/async",
+      "@wdio/cucumber-framework",
+      "expect-webdriverio"
+    ]
   }
 }

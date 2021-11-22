@@ -1,20 +1,21 @@
 import { logStep } from "./reporter";
+import { ChainablePromiseElement } from 'webdriverio'
 
 export default new class AssertionUtils {
 
-    toBeDisplayed(element:WebdriverIO.Element) {
-        expect(element).toBeDisplayed()
-        logStep(`${JSON.stringify(element.selector)} is Displayed`)
+    async toBeDisplayed(element:ChainablePromiseElement<Promise<WebdriverIO.Element>>) {
+        await expect(element).toBeDisplayed()
+        logStep(`${JSON.stringify(await element.selector)} is Displayed`)
     }
 
-    toHaveText(element:WebdriverIO.Element, expectedText:string) {
-        expect(element).toHaveText(expectedText);
-        logStep(`Validated ${JSON.stringify(element.selector)} to have text '${expectedText}'`)
+    async toHaveText(element:ChainablePromiseElement<Promise<WebdriverIO.Element>>, expectedText:string) {
+        await expect(element).toHaveText(expectedText);
+        logStep(`Validated ${JSON.stringify(await element.selector)} to have text '${expectedText}'`)
     }
 
-    toHaveTextContaining(element:WebdriverIO.Element, expectedText:string) {
-        expect(element).toHaveTextContaining(expectedText);
-        logStep(`Validated ${JSON.stringify(element.selector)} to have text '${expectedText}'`)
+    async toHaveTextContaining(element:ChainablePromiseElement<Promise<WebdriverIO.Element>>, expectedText:string) {
+        await expect(element).toHaveTextContaining(expectedText);
+        logStep(`Validated ${JSON.stringify(await element.selector)} to have text '${expectedText}'`)
     }
 
     toEqual(actualString:string, expectedText:string) {
@@ -27,15 +28,14 @@ export default new class AssertionUtils {
         logStep(`Validated '${actualString}' to contain '${expectedText}'`)
     }
 
-
-    toHaveAttribute(element:WebdriverIO.Element, atrribute:string, expectedAttribValue:string) {
-        expect(element).toHaveAttr(atrribute, expectedAttribValue)
-        logStep(`Validated element ${JSON.stringify(element.selector)} attribute '${atrribute}' contains value '${expectedAttribValue}'`)
+    async toHaveAttribute(element:ChainablePromiseElement<Promise<WebdriverIO.Element>>, atrribute:string, expectedAttribValue:string) {
+        await expect(element).toHaveAttr(atrribute, expectedAttribValue)
+        logStep(`Validated element ${JSON.stringify(await element.selector)} attribute '${atrribute}' contains value '${expectedAttribValue}'`)
     }
 
-    toHaveAttributeContaining(element:WebdriverIO.Element, atrribute:string, expectedAttribValue:string) {
-        expect(element).toHaveAttrContaining(atrribute, expectedAttribValue)
-        logStep(`Validated element ${JSON.stringify(element.selector)} attribute '${atrribute}' to have value '${expectedAttribValue}'`)
+    async toHaveAttributeContaining(element:ChainablePromiseElement<Promise<WebdriverIO.Element>>, atrribute:string, expectedAttribValue:string) {
+        await expect(element).toHaveAttrContaining(atrribute, expectedAttribValue)
+        logStep(`Validated element ${JSON.stringify(await element.selector)} attribute '${atrribute}' to have value '${expectedAttribValue}'`)
     }
 
     validatePageTitle(expectedTitle:string) {
