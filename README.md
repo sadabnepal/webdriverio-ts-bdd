@@ -1,5 +1,5 @@
 # WebdriverIOTypeScriptBDD (v7)
-This is a sample Cucumber Framework that uses WebdriverIO and TypeScript. This project is useful not only as an example of WebdriverIO and TypeScript playing nicely together, but it also includes some practical examples of the Page Object design pattern
+This is a sample Cucumber Framework that uses WebdriverIO (async mode) and TypeScript.
 
 ### Requirements
 -   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
