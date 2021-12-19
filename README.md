@@ -8,8 +8,8 @@ This is a sample Cucumber Framework that uses WebdriverIO (async mode) and TypeS
 ### Getting Started
 Clone Repository
 ```bash
-1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptBDD.git
-2. Navigate to `WebdriverIOTypeScriptBDD`
+1. git clone https://github.com/sadabnepal/WebdriverIOCucumberTSFramework.git
+2. Navigate to `WebdriverIOCucumberTSFramework`
 ```
 
 Install the dependencies:
