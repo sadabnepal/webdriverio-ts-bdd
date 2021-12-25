@@ -1,9 +1,11 @@
 # WebdriverIOTypeScriptBDD (v7)
 This is a sample Cucumber Framework that uses WebdriverIO (async mode) and TypeScript.
 
-### Requirements
--   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
--   npm >= 6.14.x - [No explicit download required, it comes with node]
+[![CI](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml)
+
+### Requirements:
+![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>
+![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code) - [Install VSCode](https://code.visualstudio.com/download) <br>
 
 ### Getting Started
 Clone Repository
@@ -31,7 +33,7 @@ npm run report
 
 Emailable HTML Report:
 ```
-<ROOT_PROJECT_FOLDER>reports/html/index.html
+<ROOT_PROJECT_FOLDER>/reports/html/index.html
 ```
 ### Key Features
 	- Cucumber BDD framework
@@ -42,24 +44,15 @@ Emailable HTML Report:
 ### Folder Structure
 ```
 ├───src
-|   ├───constants
-|   │       └───accounts.ts
-│   ├───enums
-|   │       └───WaitEnums.ts
 |   ├───features
 |   │  	    ├───smoke.feature
-|   │       └───TC01_CreateAccount.feature
-|   │      
+|   │       └───CartProduct.feature    
 |   ├───pages
-|   │  	    ├───AuthenticationPage.ts
-|   │	    ├───BasePage.ts
-|   │	    ├───CreateAccountPage.ts
-|   │	    └───HomePage.ts
 |   ├───steps
-|   │       └───TC01_CreateAccount.spec.feature
+|   │       └───singupCart.spec.ts
 |   │      
 |   └───testdata
-|           └───SignUp.json
+|           └───signup.json
 ├───Utils
 |       ├───Utilities.ts
 |       ├───AssertionUtils.ts

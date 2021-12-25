@@ -1,0 +1,19 @@
+{
+    "names" : {
+        "firstname": "john",
+        "lastname" : "chris"
+    },
+    "dateOfBirth": {
+        "day": 4,
+        "month": 5,
+        "year": 4
+    },
+    "company": "xyz",
+    "address" : {
+        "address1": "1st line",
+        "pincode": 11111,
+        "city": "city"
+    },
+    "mobileNumber": "123456789",
+    "aliasAdd": "My address"
+}

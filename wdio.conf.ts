@@ -1,7 +1,7 @@
 import allure from '@wdio/allure-reporter'
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
 const { generate } = require('multiple-cucumber-html-reporter');
-import { deleteDirectory } from './src/main/utils/fileutils';
+import { deleteDirectory } from './src/utils/fileutils';
 
 export const config: WebdriverIO.Config = {
     // ==================
@@ -14,7 +14,7 @@ export const config: WebdriverIO.Config = {
 
     suites: {
         smoke: ['./src/test/features/smoke.feature'],
-        regression: ['./src/test/features/TC01_CreateAccount.feature']
+        regression: ['./src/test/features/CartProduct.feature']
     },
     // ============
     // Capabilities
