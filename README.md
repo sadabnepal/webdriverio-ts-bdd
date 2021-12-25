@@ -1,7 +1,10 @@
-# WebdriverIOTypeScriptBDD (v7)
-This is a sample Cucumber Framework that uses WebdriverIO (async mode) and TypeScript.
+<h2 align="center"> Web Test Automation Framework </h2>
 
+<h4 align="center">
+	
 [![CI](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml)
+
+</h4>
 
 ### Requirements:
 ![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>
