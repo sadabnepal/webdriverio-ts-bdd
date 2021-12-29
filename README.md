@@ -1,4 +1,4 @@
-<h2 align="center"> Web & API Test Automation Framework </h2>
+<h2 align="center"> Web Test Automation Framework </h2>
 
 <h4 align="center">
 	
@@ -40,7 +40,6 @@ Emailable HTML Report:
 ```
 ### Key Features
 	- Cucumber BDD framework
-	- API test using supertest
 	- Page Object Design pattern
 	- Allure, Spec and Cucumber HTML report
 	- Automatic test trigger using Github action
