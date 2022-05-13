@@ -6,8 +6,7 @@
   "scripts": {
     "test": "wdio wdio.conf.ts",
     "smoke": "wdio wdio.conf.ts --suite smoke",
-    "regression": "wdio wdio.conf.ts --suite regression",
-    "report": "allure generate ./reports/allure-results --clean && allure open"
+    "regression": "wdio wdio.conf.ts --suite regression"
   },
   "author": "MD SADAB SAQIB",
   "license": "ISC",

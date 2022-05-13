@@ -8,7 +8,7 @@ export const config: WebdriverIO.Config = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/test/features/fileupload.feature'
+        './src/test/features/*.feature'
     ],
     exclude: [],
 
@@ -54,11 +54,6 @@ export const config: WebdriverIO.Config = {
     // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
     // specFileRetriesDeferred: false,
     reporters: ['spec',
-        ['allure', {
-            outputDir: './reports/allure-results',
-            disableWebdriverStepsReporting: true,
-            useCucumberStepReporter: true
-        }],
         ['cucumberjs-json', {
             jsonFolder: './reports/json/',
             language: 'en',
