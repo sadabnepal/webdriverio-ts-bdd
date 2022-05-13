@@ -1,14 +1,14 @@
-import allure from '@wdio/allure-reporter'
+import allure from '@wdio/allure-reporter';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-const { generate } = require('multiple-cucumber-html-reporter');
 import { deleteDirectory } from './src/utils/fileutils';
+const { generate } = require('multiple-cucumber-html-reporter');
 
 export const config: WebdriverIO.Config = {
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-        './src/test/features/*.feature'
+        './src/test/features/fileupload.feature'
     ],
     exclude: [],
 
@@ -29,7 +29,7 @@ export const config: WebdriverIO.Config = {
                 args: [
                     '--no-sandbox',
                     '--disable-infobars',
-                    '--headless',
+                    // '--headless',
                     '--disable-gpu',
                     '--window-size=1440,735'
                 ],
@@ -55,11 +55,11 @@ export const config: WebdriverIO.Config = {
     // specFileRetriesDeferred: false,
     reporters: ['spec',
         ['allure', {
-                outputDir: './reports/allure-results',
-                disableWebdriverStepsReporting: true,
-                useCucumberStepReporter: true
+            outputDir: './reports/allure-results',
+            disableWebdriverStepsReporting: true,
+            useCucumberStepReporter: true
         }],
-        [ 'cucumberjs-json', {
+        ['cucumberjs-json', {
             jsonFolder: './reports/json/',
             language: 'en',
         }]
@@ -173,7 +173,7 @@ export const config: WebdriverIO.Config = {
      * @param {Object}             context          Cucumber World object
      */
     afterStep: async function (step, scenario, result, context) {
-        if(!result.passed) {
+        if (!result.passed) {
             await browser.takeScreenshot();
             cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
         }
@@ -198,7 +198,7 @@ export const config: WebdriverIO.Config = {
      */
     // afterFeature: function (uri, feature) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
@@ -233,11 +233,11 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
+    onComplete: function (exitCode, config, capabilities, results) {
         generate({
             jsonDir: './reports/json/',
             reportPath: './reports/html/',
-          });
+        });
     },
     /**
     * Gets executed when a refresh happens.
