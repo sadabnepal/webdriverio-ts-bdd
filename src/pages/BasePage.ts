@@ -1,5 +1,5 @@
 import { ChainablePromiseElement } from 'webdriverio';
-import { logStep } from "../utils/reporter";
+import { logStep } from "../utils/AssertionUtils";
 
 export type WebElement = ChainablePromiseElement<WebdriverIO.Element>
 
