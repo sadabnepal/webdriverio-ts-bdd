@@ -2,11 +2,11 @@ import BasePage from "./BasePage"
 
 class SigninPage extends BasePage {
 
-    get signInBtn() { return $("//a[@class='login']") }
-    get AuthHeader() { return $("//h1") }
+    get signInBtn() { return $("//a[@href='/login']") }
+    get AuthHeader() { return $("//h2") }
 
     async openApplication() {
-        await super.open("http://automationpractice.com/index.php")
+        await super.open("https://the-internet.herokuapp.com/")
     }
 
     async clickOnSingIn() {

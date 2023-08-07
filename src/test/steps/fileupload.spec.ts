@@ -16,6 +16,6 @@ When(/^I upload file$/, async () => {
 })
 
 Then(/^I validate file is uploaded successfully$/, async () => {
-    const uploadmessage = $("//h3");
-    await expect(uploadmessage).toHaveText("File Uploaded!");
+    const uploadMessage = $("//h3");
+    await expect(uploadMessage).toHaveText("File Uploaded!");
 })

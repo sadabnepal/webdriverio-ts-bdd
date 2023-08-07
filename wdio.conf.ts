@@ -1,9 +1,21 @@
-import allure from '@wdio/allure-reporter';
+import type { Options } from '@wdio/types';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
 import { deleteDirectory } from './src/utils/fileutils';
 const { generate } = require('multiple-cucumber-html-reporter');
 
-export const config: WebdriverIO.Config = {
+export const config: Options.Testrunner = {
+    // ====================
+    // Runner Configuration
+    // ====================
+    // WebdriverIO supports running e2e tests as well as unit and component tests.
+    runner: 'local',
+    autoCompileOpts: {
+        autoCompile: true,
+        tsNodeOpts: {
+            project: './tsconfig.json',
+            transpileOnly: true
+        }
+    },
     // ==================
     // Specify Test Files
     // ==================
@@ -14,7 +26,7 @@ export const config: WebdriverIO.Config = {
 
     suites: {
         smoke: ['./src/test/features/smoke.feature'],
-        regression: ['./src/test/features/CartProduct.feature']
+        regression: ['./src/test/features/fileUpload.feature']
     },
     // ============
     // Capabilities
@@ -24,12 +36,13 @@ export const config: WebdriverIO.Config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
+            browserVersion: "stable",
             acceptInsecureCerts: true,
             'goog:chromeOptions': {
                 args: [
                     '--no-sandbox',
                     '--disable-infobars',
-                    // '--headless',
+                    '--headless',
                     '--disable-gpu',
                     '--window-size=1440,735'
                 ],
@@ -47,7 +60,7 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['chromedriver'],
+    // services: [],
     framework: 'cucumber',
     specFileRetries: 0,
     // specFileRetriesDelay: 0,
@@ -66,7 +79,7 @@ export const config: WebdriverIO.Config = {
         requireModule: [],
         dryRun: false,
         failFast: false,
-        format: ['pretty'],
+        format: [],
         snippets: true,
         source: true,
         profile: [],
@@ -142,11 +155,8 @@ export const config: WebdriverIO.Config = {
      * @param {ITestCaseHookParameter} world    world object containing information on pickle and test step
      * @param {Object}                 context  Cucumber World object
      */
-    beforeScenario: function (world, context) {
-        allure.addEnvironment("BROWSER", "Chrome");
-        allure.addEnvironment("BROWSER_VERSION", "90.0.8.9");
-        allure.addEnvironment("PLATFORM", "Windows");
-    },
+    // beforeScenario: function (world, context) {
+    // },
     /**
      *
      * Runs before a Cucumber Step.

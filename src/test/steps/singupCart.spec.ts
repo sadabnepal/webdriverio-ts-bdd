@@ -1,15 +1,15 @@
-import { Given, When, Then } from '@wdio/cucumber-framework';
-import faker from "faker"
-import testData from '../../data/signup.json'
+import { faker } from "@faker-js/faker";
+import { Given, Then, When } from '@wdio/cucumber-framework';
+import testData from '../../data/signup.json';
+import addressPage from '../../pages/cart/address.page';
+import orderPage from '../../pages/cart/order.page';
+import paymentPage from '../../pages/cart/payment.page';
+import shippingPage from '../../pages/cart/shipping.page';
+import shoppingcartPage from '../../pages/cart/shoppingcart.page';
+import womenPage from '../../pages/menu/women.page';
+import myaccountPage from '../../pages/myaccount.page';
 import signinPage from '../../pages/signin.page';
 import createaccountPage from '../../pages/singnup/createaccount.page';
-import womenPage from '../../pages/menu/women.page';
-import shoppingcartPage from '../../pages/cart/shoppingcart.page';
-import addressPage from '../../pages/cart/address.page';
-import shippingPage from '../../pages/cart/shipping.page';
-import paymentPage from '../../pages/cart/payment.page';
-import orderPage from '../../pages/cart/order.page';
-import myaccountPage from '../../pages/myaccount.page';
 import personalInfoPage from '../../pages/singnup/personalInfo.page';
 
 Given(/^I am on the home page of automation practice website$/, async () => {

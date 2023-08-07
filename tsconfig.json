@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "target": "ES5",
-    "module": "commonJs",
+    "target": "ESNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "types": [
       "node",
-      "webdriverio/async",
+      "@wdio/globals/types",
       "@wdio/cucumber-framework",
       "expect-webdriverio"
     ]
-  }
+  },
+  "exclude": [
+    "reports"
+  ]
 }
