@@ -2,19 +2,19 @@
 
 <h4 align="center">
 	
-[![CI](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOCucumberTSFramework/actions/workflows/main.yml)
+[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptCucumber/actions/workflows/main.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptCucumber/actions/workflows/main.yml)
 
 </h4>
 
 ### Requirements:
-[![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20later-%23339933?logo=npm)](https://nodejs.org/en/download/)
+[![NodeJs](https://img.shields.io/badge/-NodeJS%20v16%20OR%20later-%23339933?logo=npm)](https://nodejs.org/en/download/)
 [![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download)
 
 ### Getting Started
 Clone Repository
 ```bash
-1. git clone https://github.com/sadabnepal/WebdriverIOCucumberTSFramework.git
-2. Navigate to `WebdriverIOCucumberTSFramework`
+1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptCucumber.git
+2. Navigate to `WebdriverIOTypeScriptCucumber`
 ```
 
 Install the dependencies:
