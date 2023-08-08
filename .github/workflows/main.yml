@@ -18,11 +18,13 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - run: npm install
-    - run: npm run smoke
+    - name: Install Node.js
+      run: npm install
+    - name: run smoke suite
+      run: npm run smoke
 
   regression:
-    needs: [smoke]
+    needs: [ smoke ]
     runs-on: ubuntu-latest
 
     steps:
@@ -33,8 +35,11 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - run: npm install
-    - run: npm run regression
+    - name: Install Node.js
+      run: npm install
+    - run: ls -ltr 
+    - name: run smoke regression
+      run: npm run regression
 
     - name: Generate Cucumber HTML Report
       if: always()
