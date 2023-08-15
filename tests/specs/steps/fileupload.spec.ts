@@ -1,14 +1,14 @@
 import { Given, Then, When } from "@wdio/cucumber-framework";
 import { join } from 'path';
 
-Given(/^I open herokuapp upload page$/, async () => {
+Given(/^I open heroku app upload page$/, async () => {
     await browser.url("https://the-internet.herokuapp.com/upload");
     await browser.maximizeWindow();
 })
 
 When(/^I upload file$/, async () => {
     const chooseFileButton = $("#file-upload");
-    const filePath = join(process.cwd(), 'src', 'data', 'sample.txt');
+    const filePath = join(process.cwd(), 'tests', 'data', 'sample.txt');
     const uploadFilePath = await browser.uploadFile(filePath);
     await chooseFileButton.setValue(uploadFilePath);
     const uploadButton = $("#file-submit");

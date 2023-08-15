@@ -1,6 +1,6 @@
 {
     "cucumberautocomplete.steps": [
-        "src/test/steps/*.ts"
+        "tests/specs/steps/*.ts"
     ],
     "cucumberautocomplete.strictGherkinCompletion": true,
     "editor.codeActionsOnSave": {

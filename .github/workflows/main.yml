@@ -7,24 +7,24 @@ on:
     branches: [ master ]
 
 jobs:
-  # smoke:
-  #   runs-on: ubuntu-latest
+  smoke:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: Checkout project
-  #     uses: actions/checkout@v3
-  #   - name: Setup Node.js
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: 16
-  #       cache: 'npm'
-  #   - name: Install Node.js
-  #     run: npm install
-  #   - name: run smoke suite
-  #     run: npm run smoke
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'npm'
+    - name: Install Node.js
+      run: npm install
+    - name: run smoke suite
+      run: npm run smoke
 
   regression:
-    # needs: [ smoke ]
+    needs: [ smoke ]
     runs-on: ubuntu-latest
 
     steps:

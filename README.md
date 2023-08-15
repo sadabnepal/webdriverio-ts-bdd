@@ -29,11 +29,6 @@ npm run smoke (to run smoke suite)
 npm run regression (to run regression suite)
 ```
 
-Generate allure report:
-```bash
-npm run report
-```
-
 Emailable HTML Report:
 ```
 <ROOT_PROJECT_FOLDER>/reports/html/index.html
@@ -41,29 +36,32 @@ Emailable HTML Report:
 ### Key Features
 	- Cucumber BDD framework
 	- Page Object Design pattern
-	- Allure, Spec and Cucumber HTML report
-	- Automatic test trigger using Github action
+	- Spec and Cucumber HTML report
+	- Demo of API calls steps within UI actions
+	- Automatic test trigger using Github actions
 
 ### Folder Structure
 ```
-├───src
-|   ├───features
-|   │  	    ├───smoke.feature
-|   │       └───CartProduct.feature    
+├───tests
+|   ├───data
 |   ├───pages
-|   ├───steps
-|   │       └───singupCart.spec.ts
-|   │      
-|   └───testdata
-|           └───signup.json
-├───Utils
-|       ├───Utilities.ts
-|       ├───AssertionUtils.ts
-|       └───WaitUtils.ts
+|   ├───specs
+|   |   ├───features
+|   |   └───steps
+|   ├───types
+|   └───utils
+├───.gitignore
+├───assignment.txt
+├───package-lock.json
 ├───package.json
 ├───README.md
 ├───tsconfig.json
 └───wdio.conf.ts
+```
+
+### generate step definitions
+```
+npx cucumber-js ./FOLDER_PATH/filename.feature  
 ```
 ### Sample Report
 ![image](https://user-images.githubusercontent.com/65847528/142774279-1e18cbd2-9869-4fd9-ac3b-af397022fa73.png)

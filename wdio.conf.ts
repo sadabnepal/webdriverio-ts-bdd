@@ -1,6 +1,6 @@
 import type { Options } from '@wdio/types';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { deleteDirectory } from './src/utils/fileutils';
+import { deleteDirectory } from './tests/utils/fileUtils';
 const { generate } = require('multiple-cucumber-html-reporter');
 
 export const config: Options.Testrunner = {
@@ -20,13 +20,13 @@ export const config: Options.Testrunner = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/test/features/*.feature'
+        './tests/specs/features/*.feature'
     ],
     exclude: [],
 
     suites: {
-        smoke: ['./src/test/features/smoke.feature'],
-        regression: ['./src/test/features/fileUpload.feature']
+        smoke: ['./tests/specs/features/smoke.feature'],
+        regression: ['./tests/specs/features/fileUpload.feature']
     },
     // ============
     // Capabilities
@@ -64,7 +64,7 @@ export const config: Options.Testrunner = {
     framework: 'cucumber',
     specFileRetries: 0,
     // specFileRetriesDelay: 0,
-    // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
+    // Whether or not retried spec files should be retried immediately or deferred to the end of the queue
     // specFileRetriesDeferred: false,
     reporters: ['spec',
         ['cucumberjs-json', {
@@ -74,7 +74,7 @@ export const config: Options.Testrunner = {
     ],
     cucumberOpts: {
         retry: 0,
-        require: ['./src/test/steps/*.ts'],
+        require: ['./tests/specs/steps/*.ts'],
         backtrace: false,
         requireModule: [],
         dryRun: false,

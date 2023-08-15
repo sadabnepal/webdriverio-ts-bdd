@@ -1,0 +1,18 @@
+- Launch the browser
+- Open the URL https://parabank.parasoft.com/
+- Get the page title (ParaBank | Welcome | Online Banking) and validate it
+- Accept the Cookie message (if any)
+- Click on Register
+- Enter all the details and register as a new user
+- Navigate to the account overview and fetch the Account number
+- Deposit the amount using the POST request using API "https://parabank.parasoft.com/parabank/services/bank/deposit?accountId={Account_Num}&amount={Amount}"
+- Verify the response code and the message "Successfully deposited ${Amount} to account #{Account_Num}
+- Navigate to the account overview and click on the {Account_Num}
+- Verify if the deposited amount is displayed in the account
+- Perform a transfer or pay bills from the account and verify if the transfer or bill payment is successful.
+- Using the account Number stored in the above step, perform a GET request on the API "https://parabank.parasoft.com/parabank/services/bank/accounts/{Account_Num}/transactions"
+- Store all the descriptions, transaction date and amount values from the API for the associated account
+- Navigate to the account overview and click on the {Account_Num}
+- Validate the values of the descriptions, transaction date and amount stored from the above API with the front end
+- Log Off from the application
+- Close the browser
