@@ -1,5 +1,5 @@
 import { Then, When } from "@wdio/cucumber-framework";
-import { RegisterUserData, userName } from "../../data/register";
+import { RegisterUserData, userName } from "../../data/random";
 import registerPage from "../../pages/register.page";
 
 Then(/^I should be navigated to "([^"]*)?" page$/, async (pageHeader: string) => {

@@ -11,3 +11,14 @@ export type CreateAccountType = {
     password: string,
     confirm: string
 }
+
+export type BillPaymentType = {
+    PayeeName: string,
+    Address: string,
+    City: string,
+    State: string,
+    ZipCode: string,
+    PhoneNo: string,
+    AccountNumber: string,
+    Amount: number
+}

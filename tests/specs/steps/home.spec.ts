@@ -10,8 +10,8 @@ Then(/^I validate home page logo$/, async () => {
 })
 
 Then(/^I validate left menu items$/, async (dataTable) => {
-  const allMenuItems = dataTable.hashes().map((element: { LeftMenuItems: string }) => element.LeftMenuItems);
-  expect(await homePage.getAllLeftMenu()).toEqual(allMenuItems);
+  const expectedMenuItems = dataTable.hashes().map((element: { LeftMenuItems: string }) => element.LeftMenuItems);
+  expect(await homePage.getAllLeftMenu()).toEqual(expectedMenuItems);
 })
 
 Then(/^I user click on "([^"]*)?" link$/, async (linkText: string) => {

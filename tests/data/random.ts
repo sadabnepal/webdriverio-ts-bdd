@@ -18,3 +18,16 @@ export const RegisterUserData = {
     password: password,
     confirm: password
 }
+
+export const BillPaymentData = (accountNumber: string, amount: number) => {
+    return {
+        PayeeName: faker.person.fullName({ firstName: firstName, lastName: lastName }),
+        Address: faker.location.streetAddress(),
+        City: faker.location.city(),
+        State: faker.location.state(),
+        ZipCode: faker.location.zipCode(),
+        PhoneNo: faker.phone.number(),
+        AccountNumber: accountNumber,
+        Amount: amount
+    }
+}

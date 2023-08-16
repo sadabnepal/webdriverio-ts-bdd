@@ -16,7 +16,7 @@ export default class BasePage {
         logStep(`Clicked on ${await element.selector}`)
     }
 
-    protected async setData(element: WebElement, value: string) {
+    protected async setData(element: WebElement, value: string | number) {
         await element.setValue(value);
         logStep(`Entered '${value}' in ${await element.selector}`)
     }
