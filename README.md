@@ -13,8 +13,8 @@
 ### Getting Started
 Clone Repository
 ```bash
-1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptCucumber.git
-2. Navigate to `WebdriverIOTypeScriptCucumber`
+1. git clone https://github.com/sadabnepal/webdriverio-ts-bdd.git
+2. Navigate to `webdriverio-ts-bdd`
 ```
 
 Install the dependencies:
